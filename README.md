@@ -48,6 +48,10 @@ python 01_data_structures/01_singly_linked_list/main.py
 
 ##### 1.1.2 Output
 
+<details>
+
+<summary>Singly linked list output</summary>
+
 ```log
 Initialize empty Linked list:
 Head: None                              Tail: None                              Length: 0
@@ -155,6 +159,8 @@ Get Item at index 0:
 ERROR: Index: 0 out of range.
 ```
 
+</details>
+
 #### 1.2 Doubly linked list
 
 Test doubly linked list using below commands:
@@ -166,6 +172,10 @@ python 01_data_structures/02_doubly_linked-list/main.py
 ```
 
 ##### 1.2.2 Output
+
+<details>
+
+<summary>Doubly linked list output</summary>
 
 ```log
 Initialize empty Linked list:
@@ -273,6 +283,8 @@ ERROR: Index: 1 out of range.
 Get Item at index 0:
 ERROR: Index: 0 out of range.
 ```
+
+</details>
 
 [1]: https://www.udemy.com/share/104YM0/
 [2]: https://www.udemy.com/user/scott-barrett-16/
