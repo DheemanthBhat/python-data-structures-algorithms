@@ -113,17 +113,10 @@ class SinglyLinkedList:
             return self.append(value)
 
         new_node = self.__create_node__(value)
-        curr_idx = 0
-        prev_node = None
-        curr_node = self.head
-
-        while curr_idx != idx:
-            prev_node = curr_node
-            curr_node = curr_node.next
-            curr_idx += 1
-
+        prev_node = self[idx - 1]  # Time complexity: O(n)
+        new_node.next = prev_node.next
         prev_node.next = new_node
-        new_node.next = curr_node
+
         self.length += 1
 
     def __setitem__(self, idx: int, value: Any):
@@ -131,7 +124,7 @@ class SinglyLinkedList:
         Dunder method to assign value using index i.e.,
         `my_linked_list[idx] = value`
         """
-        curr_node: Node = self.__getitem__(idx)
+        curr_node: Node = self[idx]  # Time complexity: O(n)
         curr_node.value = value
 
     def reverse(self):
@@ -221,18 +214,9 @@ class SinglyLinkedList:
         if idx == self.length - 1:
             return self.pop()
 
-        curr_idx: int = 0
-        prev_node: Node = None
-        curr_node: Node = self.head
-        next_node: Node = None
-
-        while curr_idx != idx:
-            prev_node: Node = curr_node
-            curr_node: Node = curr_node.next
-            next_node: Node = curr_node.next
-            curr_idx += 1
-
-        prev_node.next = next_node
+        prev_node: Node = self[idx - 1]  # Time complexity: O(n)
+        del_node: Node = prev_node.next
+        prev_node.next = del_node.next
         self.length -= 1
 
-        return curr_node
+        return del_node
