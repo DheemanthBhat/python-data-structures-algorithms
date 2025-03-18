@@ -3,6 +3,7 @@ Module containing Linked List data structure.
 """
 
 from typing import Any
+from functools import singledispatchmethod
 from node import Node
 
 
@@ -25,6 +26,7 @@ class SinglyLinkedList:
         return new_node
 
     # Read
+    @singledispatchmethod
     def __getitem__(self, idx: int) -> Node:
         """
         Function to fetch item at index `idx` from linked list.
@@ -40,6 +42,32 @@ class SinglyLinkedList:
             curr_idx += 1
 
         return curr_node
+
+    @__getitem__.register
+    def _(self, idx_range: slice) -> list[Any]:
+        """
+        Function to fetch values between index range
+        [idx_range.start, idx_range.stop) from linked list.
+        """
+        values: list[Any] = []
+
+        start_idx = idx_range.start
+        stop_idx = idx_range.stop
+        # step_val = idx_range.step  # Not supported.
+
+        curr_node = self.head
+        curr_idx = 0
+        while curr_node is not None:
+            if curr_idx == stop_idx:
+                break
+
+            if curr_idx >= start_idx:
+                values.append(curr_node.value)
+
+            curr_node = curr_node.next
+            curr_idx += 1
+
+        return values
 
     def to_list(self) -> list[Any]:
         """

@@ -75,8 +75,8 @@ def main():
     except IndexError as err:
         print("ERROR:", err)
 
+    # Read
     try:
-        # Read
         count = sll.length + 2
         print(f"\nGet {count} from {sll.length} items by index:")
 
@@ -85,6 +85,9 @@ def main():
 
     except IndexError as err:
         print("ERROR:", err)
+
+    print("\nList values between indices [1, 4):")
+    print(sll[1:4])
 
     print("\nRepresentation of Linked list (Before reverse):")
     print(sll)

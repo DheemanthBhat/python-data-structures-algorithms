@@ -99,6 +99,9 @@ Item at index 4: Node(value=50, next=0)
 Item at index 5: Node(value=0, next=None)
 ERROR: Index: 6 out of range.
 
+List values between indices [1, 4):
+[40, 20, 10]
+
 Representation of Linked list (Before reverse):
 Node(value=5, next=40)->
   Node(value=40, next=20)->
