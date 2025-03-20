@@ -1,5 +1,5 @@
 """
-Module containing Linked List data structure.
+Module containing doubly Linked List data structure.
 """
 
 from typing import Any

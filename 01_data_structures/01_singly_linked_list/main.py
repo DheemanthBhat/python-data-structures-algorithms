@@ -1,5 +1,5 @@
 """
-Module to test Linked list.
+Module to test singly Linked list.
 """
 
 from singly_linked_list import SinglyLinkedList

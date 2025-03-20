@@ -1,5 +1,5 @@
 """
-Module to test Linked list.
+Module to test doubly Linked list.
 """
 
 from doubly_linked_list import DoublyLinkedList
