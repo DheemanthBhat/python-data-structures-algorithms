@@ -166,7 +166,7 @@ Test doubly linked list using below commands:
 #### 2.1 Commands
 
 ```sh
-python 01_data_structures/02_doubly_linked-list/main.py
+python 01_data_structures/02_doubly_linked_list/main.py
 ```
 
 #### 2.2 Output
