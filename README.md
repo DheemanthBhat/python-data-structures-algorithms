@@ -486,6 +486,8 @@ Get Item at index 0:
 ERROR: Index: 0 out of range.
 ```
 
+</details>
+
 ### 5 Binary Search Tree (BST)
 
 #### 5.1 Commands
