@@ -486,5 +486,35 @@ Get Item at index 0:
 ERROR: Index: 0 out of range.
 ```
 
+### 5 Binary Search Tree (BST)
+
+#### 5.1 Commands
+
+Test BST using below commands:
+
+```sh
+python 01_data_structures/05_binary_search_tree/main.py
+```
+
+#### 5.2 Output
+
+<details>
+
+<summary>BST output</summary>
+
+```log
+Initialize empty Binary Search Tree:
+
+Insert values [1, 40, 20, 10, 50, 0] into Binary Search Tree:
+Root: Node(left=0, value=1, right=40)   Level: 4
+
+Check if values: [10, 0, -20] exists in Binary Search Tree:
+Value: 10 present
+Value: 0 present
+Value: -20 absent
+```
+
+</details>
+
 [1]: https://www.udemy.com/share/104YM0/
 [2]: https://www.udemy.com/user/scott-barrett-16/
