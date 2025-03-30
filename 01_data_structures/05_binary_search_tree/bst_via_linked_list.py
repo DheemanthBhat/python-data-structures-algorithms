@@ -29,9 +29,6 @@ class BinarySearchTree:
         Function to check if Binary Search Tree
         contains an item matching the `value`.
         """
-        if self.root is None:
-            return False
-
         curr_node = self.root
         while curr_node is not None:
             if curr_node.value == value:
