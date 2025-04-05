@@ -31,17 +31,43 @@ def get_largest_node(bst: BinarySearchTree):
     return curr_node
 
 
-def travel_bst(node: Node, height: int = 0, path: str = ""):
+def create_2d_matrix(rows: int, cols: int, default_value: str = ""):
     """
-    Recursive function to travel (reach every node) Binary Search Tree.
+    Function to create 2D matrix.
     """
-    yield node.value, height, path
+    return [[default_value for _ in range(cols)] for __ in range(rows)]
 
-    if node.left is not None:
-        yield from travel_bst(node.left, height + 1, path + "L")
 
-    if node.right is not None:
-        yield from travel_bst(node.right, height + 1, path + "R")
+def travel_bst(bst: BinarySearchTree):
+    """
+    Closure to travel Binary Search Tree.
+    """
+    bst_level = bst.level
+
+    def next_node(node: Node, level: int = 0, path: str = ""):
+        """
+        Recursive function to compute level/height (as row index) and
+        right offset (as column index) for each node in a Binary Search Tree.
+        """
+        # Get total number of possible nodes below current level.
+        curr_tot_nodes = get_node_count(bst_level - level)
+
+        # Calculate right offset.
+        col_idx = curr_tot_nodes // 2
+        for curr_level, direction in enumerate(path, start=1):
+            if direction == "R":
+                tot_left_nodes = get_node_count(bst_level - curr_level)
+                col_idx += tot_left_nodes + 1
+
+        yield level, col_idx, node.value
+
+        if node.left is not None:
+            yield from next_node(node.left, level + 1, path + "L")
+
+        if node.right is not None:
+            yield from next_node(node.right, level + 1, path + "R")
+
+    return next_node
 
 
 def display_bst(bst: BinarySearchTree):
@@ -62,23 +88,15 @@ def display_bst(bst: BinarySearchTree):
     largest_node = get_largest_node(bst)
     char_length = len(str(largest_node.value))
 
-    # Create matrix grid with full of empty values to contain BST.
-    matrix = [[f"{' ':>{char_length}}" for _ in range(tot_nodes)] for __ in range(bst.level)]
+    # Create 2 dimensional matrix with full of empty values to contain BST.
+    matrix = create_2d_matrix(bst.level, tot_nodes, f"{' ':>{char_length}}")
+
+    # Initialize BST crawler.
+    next_node = travel_bst(bst)
 
     # Fill matrix with values from nodes by traveling BST.
-    for value, level, path in travel_bst(bst.root):
-        # Get total number of nodes at current level.
-        curr_tot_nodes = get_node_count(bst.level - level)
-        c_idx = curr_tot_nodes // 2
-
-        curr_level = 1
-        for direction in path:
-            if direction == "R":
-                tot_left_nodes = get_node_count(bst.level - curr_level)
-                c_idx += tot_left_nodes + 1
-            curr_level += 1
-
-        matrix[level][c_idx] = f"{value:>{char_length}}"
+    for row_idx, col_idx, value in next_node(bst.root):
+        matrix[row_idx][col_idx] = f"{value:>{char_length}}"
 
     # Print matrix.
     for row in matrix:
