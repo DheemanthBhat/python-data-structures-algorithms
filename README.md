@@ -1,20 +1,38 @@
 # python-data-structures-algorithms
 
-## Introduction
+## 1 Introduction
 
-### 1 About
+### 1.1 About
+
+#### 1.1.1 Summary
 
 1. This repository contains implementation for Data Structures and Algorithms in Python programming language.
-2. Goal of this implementation in Python is to use language specific features like Generators, Function tools, etc.
+2. Goal of this implementation is to use language specific features like Generators, Function tools, Dunder methods, Closures etc.
 3. This implementation is based on Udemy course [Python Data Structures & Algorithms + LEETCODE Exercises][1] by [Scott Barrett][2].
 
 > Note: Not optimized for production environment.
 
-### 2 Technologies
+#### 1.1.2 Index
+
+This repository covers following data structures and algorithms:
+
+##### Data Structures
+
+1. [Singly Linked List](01_data_structures/01_singly_linked_list)
+2. [Doubly Linked List](01_data_structures/02_doubly_linked_list)
+3. [Stack](01_data_structures/03_stack)
+4. [Queue](01_data_structures/04_queue)
+5. [Binary Search Tree](01_data_structures/05_binary_search_tree)
+
+##### Algorithms
+
+W.I.P
+
+### 1.2 Technologies
 
 1. Python: Programming language.
 
-### 3 Setup
+### 1.3 Setup
 
 #### STEP 1: Clone repo
 
@@ -32,19 +50,19 @@ Traverse to project folder:
 cd python-data-structures-algorithms
 ```
 
-## Data Structures
+## 2 Data Structures
 
-### 1 Singly linked list
+### 2.1 Singly linked list
 
 Test singly linked list using below commands:
 
-#### 1.1 Commands
+#### 2.1.1 Commands
 
 ```sh
 python 01_data_structures/01_singly_linked_list/main.py
 ```
 
-#### 1.2 Output
+#### 2.1.2 Output
 
 <details>
 
@@ -159,17 +177,17 @@ ERROR: Index: 0 out of range.
 
 </details>
 
-### 2 Doubly linked list
+### 2.2 Doubly linked list
 
 Test doubly linked list using below commands:
 
-#### 2.1 Commands
+#### 2.2.1 Commands
 
 ```sh
 python 01_data_structures/02_doubly_linked_list/main.py
 ```
 
-#### 2.2 Output
+#### 2.2.2 Output
 
 <details>
 
@@ -284,9 +302,9 @@ ERROR: Index: 0 out of range.
 
 </details>
 
-### 3 Stack
+### 2.3 Stack
 
-#### 3.1 Commands
+#### 2.3.1 Commands
 
 Test Stack using below commands:
 
@@ -294,7 +312,7 @@ Test Stack using below commands:
 python 01_data_structures/03_stack/main.py
 ```
 
-#### 3.2 Output
+#### 2.3.2 Output
 
 <details>
 
@@ -386,9 +404,9 @@ ERROR: Index: 0 out of range.
 
 </details>
 
-### 4 Queue
+### 2.4 Queue
 
-#### 4.1 Commands
+#### 2.4.1 Commands
 
 Test Queue using below commands:
 
@@ -396,7 +414,7 @@ Test Queue using below commands:
 python 01_data_structures/04_queue/main.py
 ```
 
-#### 4.2 Output
+#### 2.4.2 Output
 
 <details>
 
@@ -488,9 +506,9 @@ ERROR: Index: 0 out of range.
 
 </details>
 
-### 5 Binary Search Tree (BST)
+### 2.5 Binary Search Tree (BST)
 
-#### 5.1 Commands
+#### 2.5.1 Commands
 
 Test BST using below commands:
 
@@ -498,7 +516,7 @@ Test BST using below commands:
 python 01_data_structures/05_binary_search_tree/main.py
 ```
 
-#### 5.2 Output
+#### 2.5.2 Output
 
 <details>
 
@@ -514,9 +532,9 @@ Display Binary Search Tree:
 Root: Node(left=30, value=50, right=70)
 Max level: 4
 
-                     50                     
-         30                      70         
-   20          40          55          80   
+                     50
+         30                      70
+   20          40          55          80
  0    25    35    41    54    56    75    90
 
 Check if values: [56, 0, -20] exists in Binary Search Tree:
