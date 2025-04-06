@@ -31,10 +31,16 @@ def get_largest_node(bst: BinarySearchTree):
     return curr_node
 
 
-def create_2d_matrix(rows: int, cols: int, default_value: str = ""):
+def create_2d_matrix_from_bst(bst: BinarySearchTree, default_value: str = ""):
     """
     Function to create 2D matrix.
     """
+    # Max level of BST as row count.
+    rows = bst.level
+
+    # Total number of nodes in BST for column count.
+    cols = get_node_count(bst.level)
+
     return [[default_value for _ in range(cols)] for __ in range(rows)]
 
 
@@ -82,15 +88,12 @@ def display_bst(bst: BinarySearchTree):
     print(f"Root: {str(bst.root):<33}")
     print(f"Max level: {bst.level}\n")
 
-    # Get total number of nodes in BST.
-    tot_nodes = get_node_count(bst.level)
-
     # Get Node with largest value in BST.
     largest_node = get_largest_node(bst)
     char_length = len(str(largest_node.value))
 
-    # Create 2 dimensional matrix with full of empty values to contain BST.
-    matrix = create_2d_matrix(bst.level, tot_nodes, f"{' ':>{char_length}}")
+    # Create display grid (2D matrix) with custom empty values to contain BST.
+    matrix = create_2d_matrix_from_bst(bst, default_value=f"{' ':>{char_length}}")
 
     # Initialize BST crawler.
     next_node = travel_bst(bst)
