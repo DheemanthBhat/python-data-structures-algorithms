@@ -2,8 +2,8 @@
 Module to test Binary Search Tree.
 """
 
-import utils
 from bst_via_linked_list import BinarySearchTree
+from bst_utils import BSTUtils
 
 
 def main():
@@ -22,8 +22,9 @@ def main():
     for value in input_values:
         bst.insert(value)
 
+    bst_utils = BSTUtils(bst)
     print("\nDisplay Binary Search Tree:")
-    utils.display_bst(bst)
+    bst_utils.display_bst()
 
     # Read
     lookup_values = [56, 0, -20]
