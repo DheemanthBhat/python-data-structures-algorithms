@@ -43,8 +43,9 @@ def travel_bst(bst: BinarySearchTree):
     Closure to travel Binary Search Tree.
     """
     bst_level = bst.level
+    root_node = bst.root
 
-    def next_node(node: Node, level: int = 0, path: str = ""):
+    def next_node(node: Node = root_node, level: int = 0, path: str = ""):
         """
         Recursive function to compute level/height (as row index) and
         right offset (as column index) for each node in a Binary Search Tree.
@@ -74,7 +75,7 @@ def display_bst(bst: BinarySearchTree):
     """
     Function to display Binary Search Tree.
     """
-    # Basic validation of BST.
+    # Basic non empty validation of BST.
     if bst is None or bst.root is None:
         print("Tree is empty.")
 
@@ -94,8 +95,8 @@ def display_bst(bst: BinarySearchTree):
     # Initialize BST crawler.
     next_node = travel_bst(bst)
 
-    # Fill matrix with values from nodes by traveling BST.
-    for row_idx, col_idx, value in next_node(bst.root):
+    # Fill matrix with values by traveling BST.
+    for row_idx, col_idx, value in next_node():
         matrix[row_idx][col_idx] = f"{value:>{char_length}}"
 
     # Print matrix.
