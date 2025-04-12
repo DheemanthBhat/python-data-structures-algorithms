@@ -83,5 +83,4 @@ class BSTUtils:
             matrix[row_idx][col_idx] = value
 
         # Print matrix.
-        for row in matrix:
-            print(" ".join(row))
+        print(matrix)

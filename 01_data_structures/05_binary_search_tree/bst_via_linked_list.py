@@ -1,5 +1,5 @@
 """
-Module containing Binary Search Tree data structure.
+Module containing implementation for Binary Search Tree data structure.
 """
 
 from typing import Any

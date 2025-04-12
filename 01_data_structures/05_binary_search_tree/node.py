@@ -3,17 +3,18 @@ Module containing Node dataclass.
 """
 
 from typing import Any
+from dataclasses import dataclass
 
 
+@dataclass
 class Node:
     """
     Definition for two pointer Node.
     """
 
-    def __init__(self, value: Any):
-        self.value: Any = value
-        self.left: dict | None = None
-        self.right: dict | None = None
+    value: Any
+    left: dict | None = None
+    right: dict | None = None
 
     def __str__(self) -> str:
         """
