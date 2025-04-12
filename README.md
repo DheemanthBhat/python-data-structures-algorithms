@@ -5,7 +5,7 @@
 ### 1.1 Summary
 
 1. This repository contains implementation for Data Structures and Algorithms in Python programming language.
-2. Goal of this implementation is to use language specific features like Generators, Function tools, Dunder methods, Closures etc.
+2. Goal of this implementation is to use language specific features like Dataclasses, Generators, Function tools, Closures etc.
 3. This implementation is based on Udemy course [Python Data Structures & Algorithms + LEETCODE Exercises][1] by [Scott Barrett][2].
 
 > **Note**:  
