@@ -22,7 +22,7 @@ class Row:
 
     col_count: InitVar[int]
     max_char_len: int = field(repr=False)
-    data: list[Any] | None = None
+    data: list[Any] = field(init=False)
 
     def __post_init__(self, col_count: int):
         self.data: list[Any] = [f"{' ':>{self.max_char_len}}"] * col_count
@@ -43,7 +43,7 @@ class Matrix:
     bst: InitVar[BinarySearchTree]
     row_count: InitVar[int]
     col_count: InitVar[int]
-    rows: list[Row] | None = None
+    rows: list[Row] = field(init=False)
 
     def __get_value_len__(self, node: Node, lengthiest: int = -1):
         """
@@ -75,7 +75,7 @@ class Matrix:
         for row in self.rows:
             yield row.data
 
-    def __repr__(self) -> str:
+    def __str__(self) -> str:
         """
         Function to represent Matrix as string.
         """

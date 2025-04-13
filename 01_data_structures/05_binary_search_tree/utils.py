@@ -1,6 +1,15 @@
 """
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+❗Note:                                                     ❗
+❗    This module is deprecated and exists just for history.❗
+❗    It is replaced by `BSTUtils` class in `bst_utils.py`. ❗
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗
+
 Module containing utility functions.
 """
+
+__deprecated__ = True
+__deprecation_reason__ = "Use `BSTUtils` class in `bst_utils.py`."
 
 from bst_via_linked_list import BinarySearchTree
 from node import Node
