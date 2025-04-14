@@ -22,6 +22,7 @@ This repository covers following data structures and algorithms:
 3. [Stack](01_data_structures/03_stack/README.md)
 4. [Queue](01_data_structures/04_queue/README.md)
 5. [Binary Search Tree](01_data_structures/05_binary_search_tree/README.md)
+6. [Hash Table](01_data_structures/06_hash_table/README.md)
 
 #### 1.2.2 Algorithms
 
