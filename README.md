@@ -22,6 +22,7 @@ This repository covers following data structures and algorithms:
 3. [Stack](01_data_structures/03_stack/README.md)
 4. [Queue](01_data_structures/04_queue/README.md)
 5. [Binary Search Tree](01_data_structures/05_binary_search_tree/README.md)
+6. [Hash Table](01_data_structures/06_hash_table/README.md)
 
 #### 1.2.2 Algorithms
 
@@ -29,24 +30,41 @@ W.I.P
 
 ### 1.3 Technologies
 
-1. Python: Programming language.
+1. Python: Programming language (version >= 3.12).
 
 ## 2 Setup
 
-### STEP 1: Clone repo
+### STEP 1: Clone repository
 
-Clone this repo:
+Clone this repository and traverse to the project folder using below commands:
 
 ```sh
 git clone https://github.com/DheemanthBhat/python-data-structures-algorithms.git
+cd python-data-structures-algorithms
 ```
 
-### STEP 2: Open project
+### STEP 2: Setup virtual environment
 
-Traverse to project folder:
+Create and activate virtual environment.
+
+#### Windows
 
 ```sh
-cd python-data-structures-algorithms
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+#### Linux
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### STEP 3: Install python packages
+
+```sh
+pip install -r requirements.txt
 ```
 
 [1]: https://www.udemy.com/share/104YM0/
