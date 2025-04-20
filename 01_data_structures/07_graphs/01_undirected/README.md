@@ -32,18 +32,19 @@ Adding edge between Vertex(value='A') and Vertex(value='B').
 Adding edge between Vertex(value='B') and Vertex(value='C').
 Adding edge between Vertex(value='C') and Vertex(value='D').
 Adding edge between Vertex(value='D') and Vertex(value='A').
-Adding edge between Vertex(value='D') and Vertex(value='B').
 Adding edge between Vertex(value='D') and Vertex(value='E').
-Adding edge between Vertex(value='X') and Vertex(value='Y').
-ERROR: Not found: 'Vertex(value='X')'
 Adding edge between Vertex(value='D') and Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='Y')'
+Adding edge between Vertex(value='Y') and Vertex(value='D').
+ERROR: Not found: 'Vertex(value='Y')'
+Adding edge between Vertex(value='X') and Vertex(value='Y').
+ERROR: Not found: 'Vertex(value='X')'
 
 Adjacency list:
 Vertex(value='A') => [Vertex(value='B'), Vertex(value='D')]
-Vertex(value='B') => [Vertex(value='A'), Vertex(value='C'), Vertex(value='D')]
+Vertex(value='B') => [Vertex(value='A'), Vertex(value='C')]
 Vertex(value='C') => [Vertex(value='B'), Vertex(value='D')]
-Vertex(value='D') => [Vertex(value='C'), Vertex(value='A'), Vertex(value='B'), Vertex(value='E')]
+Vertex(value='D') => [Vertex(value='C'), Vertex(value='A'), Vertex(value='E')]
 Vertex(value='E') => [Vertex(value='D')]
 
 Delete 2 vertices from graph:
@@ -55,6 +56,10 @@ Delete edges:
 Deleting edge between Vertex(value='B') and Vertex(value='C').
 Deleting edge between Vertex(value='A') and Vertex(value='C').
 Deleting edge between Vertex(value='E') and Vertex(value='X').
+ERROR: Not found: 'Vertex(value='X')'
+Deleting edge between Vertex(value='X') and Vertex(value='A').
+ERROR: Not found: 'Vertex(value='X')'
+Deleting edge between Vertex(value='X') and Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='X')'
 
 Updated adjacency list after delete:
