@@ -2,16 +2,16 @@
 
 ## 1 Types of Graphs
 
-Based on property there are different types of Graphs
+Based on below listed properties, there are different types of Graphs
 
-| Property       | Types                                              |
-| -------------- | -------------------------------------------------- |
-| Direction      | Undirected, Directed                               |
-| Weight         | Unweighted, Weighted                               |
-| Cyclicity      | Cyclic, Acyclic (DAG)                              |
-| Connectivity   | Connected, Disconnected, Strongly/Weakly Connected |
-| Edge Count     | Tree, Forest                                       |
-| Multiplicity   | Simple Graph, Multigraph, Pseudograph              |
+| Property     | Types                                              |
+| ------------ | -------------------------------------------------- |
+| Direction    | Undirected, Directed                               |
+| Weight       | Unweighted, Weighted                               |
+| Cyclicity    | Cyclic, Acyclic (DAG)                              |
+| Connectivity | Connected, Disconnected, Strongly/Weakly Connected |
+| Edge Count   | Tree, Forest                                       |
+| Multiplicity | Simple Graph, Multigraph, Pseudograph              |
 
 ## 2 Index
 
