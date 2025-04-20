@@ -8,7 +8,7 @@ from vertex import Vertex
 
 class DirectedGraph:
     """
-    Definition for Graph data structure.
+    Definition for Directed Graph data structure.
     """
 
     # Create
@@ -33,7 +33,7 @@ class DirectedGraph:
     def add_edge(self, frm_vtx: Vertex, to_vtx: Vertex):
         """
         Function to add new edge between two vertices.
-        Direction of the new edge is from `frm_vtx` vertex to `to_vtx` vertex.
+        Direction of the new edge is from `frm_vtx` to `to_vtx`.
         """
         # Validation
         if self.adj_list.get(frm_vtx, None) is None:
@@ -66,7 +66,7 @@ class DirectedGraph:
     def remove_edge(self, frm_vtx: Vertex, to_vtx: Vertex):
         """
         Function to remove edge between two vertices.
-        Direction of the removed edge is from `frm_vtx` vertex to `to_vtx` vertex.
+        Direction of the removed edge is from `frm_vtx` to `to_vtx`.
         """
         # Validation
         if self.adj_list.get(frm_vtx, None) is None:

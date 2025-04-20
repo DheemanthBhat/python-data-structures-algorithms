@@ -33,8 +33,9 @@ def main():
         [Vertex("C"), Vertex("D")],
         [Vertex("D"), Vertex("A")],
         [Vertex("D"), Vertex("E")],
-        [Vertex("X"), Vertex("Y")],
-        [Vertex("D"), Vertex("Y")],
+        [Vertex("D"), Vertex("Y")],  # RHS vertex does not exist.
+        [Vertex("Y"), Vertex("D")],  # LHS vertex does not exist.
+        [Vertex("X"), Vertex("Y")],  # Both vertex does not exist.
     ]
     print(f"\nAdd {len(edges)} valid edges to graph:")
 
@@ -63,9 +64,11 @@ def main():
             print("ERROR:", err)
 
     del_edges = [
-        [Vertex("B"), Vertex("C")],
-        [Vertex("A"), Vertex("C")],
-        [Vertex("E"), Vertex("X")],
+        [Vertex("B"), Vertex("C")],  # Valid edge.
+        [Vertex("A"), Vertex("C")],  # Missing edge.
+        [Vertex("E"), Vertex("X")],  # RHS vertex does not exist.
+        [Vertex("X"), Vertex("A")],  # LHS vertex does not exist.
+        [Vertex("X"), Vertex("Y")],  # Both vertex does not exist.
     ]
     print(f"\nDelete {len(del_edges)} edges:")
 

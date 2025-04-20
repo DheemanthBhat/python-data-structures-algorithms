@@ -22,17 +22,6 @@ class UndirectedGraph:
         vtx = Vertex(value=ip_value)
         return vtx
 
-    # Read
-    def __getitem__(self, vtx: Vertex) -> list[Vertex]:
-        """
-        Function to get all vertices pointing to and from `vtx` vertex.
-        """
-        # Validation
-        if self.adj_list.get(vtx, None) is None:
-            raise ValueError(f"Not found: '{vtx}'")
-
-        return self.adj_list[vtx]
-
     # Update
     def add_vertex(self, vtx: Vertex):
         """
@@ -47,11 +36,19 @@ class UndirectedGraph:
             1. From `vtx_1` vertex to `vtx_2` vertex.
             2. From `vtx_2` vertex to `vtx_1` vertex.
         """
-        if vtx_2 not in self[vtx_1] and vtx_1 not in self[vtx_2]:
-            # Add edge from `vtx_1` to `vtx_2`.
+        # Validation
+        if self.adj_list.get(vtx_1, None) is None:
+            raise ValueError(f"Not found: '{vtx_1}'")
+
+        if self.adj_list.get(vtx_2, None) is None:
+            raise ValueError(f"Not found: '{vtx_2}'")
+
+        # Add edge from `vtx_1` to `vtx_2`.
+        if vtx_2 not in self.adj_list[vtx_1]:
             self.adj_list[vtx_1].append(vtx_2)
 
-            # Add edge from `vtx_2` to `vtx_1`.
+        # Add edge from `vtx_2` to `vtx_1`.
+        if vtx_1 not in self.adj_list[vtx_2]:
             self.adj_list[vtx_2].append(vtx_1)
 
     # Delete
@@ -59,23 +56,34 @@ class UndirectedGraph:
         """
         Function to remove vertex `vtx` from the graph.
         """
+        # Validation.
+        if self.adj_list.get(vtx, None) is None:
+            raise ValueError(f"Not found: '{vtx}'")
+
         # Delete all edges pointing to vertex `vtx`.
-        for to_vtx in self[vtx]:
-            self[to_vtx].remove(vtx)
+        for to_vtx in self.adj_list[vtx]:
+            self.adj_list[to_vtx].remove(vtx)
 
         # Delete vertex `vtx` from adjacency list.
         del self.adj_list[vtx]
 
     def remove_edge(self, vtx_1: Vertex, vtx_2: Vertex):
         """
-        Function to remove edge between two vertices.
-        Direction of the removed edge is from `vtx_1` vertex to `vtx_2` vertex.
+        Function to remove edges between two vertices.
+            1. From `vtx_1` vertex to `vtx_2` vertex.
+            2. From `vtx_2` vertex to `vtx_1` vertex.
         """
-        if vtx_2 not in self[vtx_1] and vtx_1 not in self[vtx_2]:
-            return
+        # Validation
+        if self.adj_list.get(vtx_1, None) is None:
+            raise ValueError(f"Not found: '{vtx_1}'")
+
+        if self.adj_list.get(vtx_2, None) is None:
+            raise ValueError(f"Not found: '{vtx_2}'")
 
         # Remove edge from `vtx_1` to `vtx_2`.
-        self.adj_list[vtx_1].remove(vtx_2)
+        if vtx_2 in self.adj_list[vtx_1]:
+            self.adj_list[vtx_1].remove(vtx_2)
 
         # Remove edge from `vtx_2` to `vtx_1`.
-        self.adj_list[vtx_2].remove(vtx_1)
+        if vtx_1 in self.adj_list[vtx_2]:
+            self.adj_list[vtx_2].remove(vtx_1)

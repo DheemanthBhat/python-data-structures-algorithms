@@ -27,16 +27,18 @@ Adding vertex 'C' into graph.
 Adding vertex 'D' into graph.
 Adding vertex 'E' into graph.
 
-Add 7 valid edges to graph:
+Add 8 valid edges to graph:
 Adding edge from Vertex(value='A') to Vertex(value='B').
 Adding edge from Vertex(value='B') to Vertex(value='C').
 Adding edge from Vertex(value='C') to Vertex(value='D').
 Adding edge from Vertex(value='D') to Vertex(value='A').
 Adding edge from Vertex(value='D') to Vertex(value='E').
-Adding edge from Vertex(value='X') to Vertex(value='Y').
-ERROR: Not found: 'Vertex(value='X')'
 Adding edge from Vertex(value='D') to Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='Y')'
+Adding edge from Vertex(value='Y') to Vertex(value='D').
+ERROR: Not found: 'Vertex(value='Y')'
+Adding edge from Vertex(value='X') to Vertex(value='Y').
+ERROR: Not found: 'Vertex(value='X')'
 
 Adjacency list:
 Vertex(value='A') => [Vertex(value='B')]
@@ -50,10 +52,14 @@ Delete vertex: Vertex(value='D')
 Delete vertex: Vertex(value='X')
 ERROR: Not found: 'Vertex(value='X')'
 
-Delete 3 edges:
+Delete 5 edges:
 Deleting edge from Vertex(value='B') to Vertex(value='C').
 Deleting edge from Vertex(value='A') to Vertex(value='C').
 Deleting edge from Vertex(value='E') to Vertex(value='X').
+ERROR: Not found: 'Vertex(value='X')'
+Deleting edge from Vertex(value='X') to Vertex(value='A').
+ERROR: Not found: 'Vertex(value='X')'
+Deleting edge from Vertex(value='X') to Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='X')'
 
 Updated adjacency list after delete:
