@@ -12,10 +12,10 @@ class BinarySearchTree:
     """
 
     # Create
-    def __init__(self):
+    def __init__(self, allow_duplicates: bool = False):
         self.root: Node = None
         self.level: int = 0
-        self.allow_duplicate = False
+        self.allow_duplicates: bool = allow_duplicates
 
     def __create_node__(self, value: Any) -> Node:
         """
@@ -71,7 +71,7 @@ class BinarySearchTree:
             leaf_node = curr_node
 
             if value >= curr_node.value:
-                if value == curr_node.value and self.allow_duplicate is False:
+                if value == curr_node.value and self.allow_duplicates is False:
                     return
                 curr_node = curr_node.right
             else:
