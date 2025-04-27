@@ -24,6 +24,7 @@ This repository covers following data structures and algorithms:
 1. [Binary Search Tree](01_data_structures/05_binary_search_tree/README.md)
 1. [Hash Table](01_data_structures/06_hash_table/README.md)
 1. [Graph](01_data_structures/07_graphs/README.md)
+1. [Heap](01_data_structures/08_heaps/README.md)
 
 #### 1.2.2 Algorithms
 
