@@ -45,28 +45,34 @@ class BSTUtils:
 
         return curr_node
 
-    def crawl_bst(self, node: Node, level: int = 0, path: str = ""):
+    def crawl_bst(self, node: Node, child_type: str = None, level: int = 0, par_idx: int = 0):
         """
-        Recursive function to compute level/height (as row index) and
-        right offset (as column index) for each node in a Binary Search Tree.
+        Recursive function to compute:
+            1. level/height as row index
+            2. left/right offset (from parent) as column index
+        for each node in a Binary Search Tree.
         """
-        # Get total number of possible nodes below current level.
+        # Get total number of possible nodes below current parent.
         curr_tot_nodes = self.get_node_count(self.max_level - level)
 
-        # Calculate right offset.
+        # Initialize child's index.
         col_idx = curr_tot_nodes // 2
-        for curr_level, direction in enumerate(path, start=1):
-            if direction == "R":
-                tot_left_nodes = self.get_node_count(self.max_level - curr_level)
-                col_idx += tot_left_nodes + 1
+
+        # Based on child's type, calculate its offset from parent.
+        if child_type == "L":
+            col_idx = par_idx - 1 - col_idx
+        elif child_type == "R":
+            col_idx = par_idx + 1 + col_idx
 
         yield level, col_idx, node.value
 
+        # Handle left child.
         if node.left is not None:
-            yield from self.crawl_bst(node.left, level + 1, path + "L")
+            yield from self.crawl_bst(node.left, "L", level + 1, col_idx)
 
+        # Handle right child.
         if node.right is not None:
-            yield from self.crawl_bst(node.right, level + 1, path + "R")
+            yield from self.crawl_bst(node.right, "R", level + 1, col_idx)
 
     def display_bst(self):
         """
