@@ -15,7 +15,7 @@ class HeapUtils:
 
     def __init__(self, heap: Heap):
         if heap is None or len(heap.nodes) == 0:
-            raise ValueError("Heap is empty.")
+            raise ValueError("Heap is empty!")
 
         self.heap = heap
         self.max_level = ceil(log2(len(heap.nodes) + 1))
@@ -46,25 +46,19 @@ class HeapUtils:
 
         return 2**level - 1
 
-    def get_left_child(self, curr_idx: int) -> tuple[Node, int] | tuple[None, None]:
+    def get_left_child_idx(self, curr_idx: int) -> int:
         """
-        Function to get left child.
+        Function to get left child's index in heap.
         """
         lc_idx = self.heap.__get_left_child_idx__(curr_idx)
-        if lc_idx > (len(self.heap.nodes) - 1):
-            return None, None
+        return -1 if lc_idx > (len(self.heap.nodes) - 1) else lc_idx
 
-        return self.heap.nodes[lc_idx], lc_idx
-
-    def get_right_child(self, curr_idx: int) -> tuple[Node, int] | tuple[None, None]:
+    def get_right_child_idx(self, curr_idx: int) -> int:
         """
-        Function to get right child.
+        Function to get right child's index in heap.
         """
         rc_idx = self.heap.__get_right_child_idx__(curr_idx)
-        if rc_idx > (len(self.heap.nodes) - 1):
-            return None, None
-
-        return self.heap.nodes[rc_idx], rc_idx
+        return -1 if rc_idx > (len(self.heap.nodes) - 1) else rc_idx
 
     def get_max_char_len(self) -> int:
         """
@@ -75,7 +69,13 @@ class HeapUtils:
         char_lens = [len(str(node.value)) for node in self.heap.nodes]
         return max(char_lens)
 
-    def crawl_heap(self, curr_idx: int = 0, level: int = 0, path: str = ""):
+    def crawl_heap(
+        self,
+        node_idx: int = 0,
+        child_type: str = None,
+        level: int = 0,
+        par_idx: int = -1,
+    ):
         """
         Function to crawl heap.
 
@@ -83,27 +83,31 @@ class HeapUtils:
         This is quick adaptation of `bst_utils.crawl_bst()`.
         This function must be simplified or rewritten for Heap.
         """
-        curr_node: Node = self.heap.nodes[curr_idx]
+        node: Node = self.heap.nodes[node_idx]
 
-        # Get total number of possible nodes below current level.
+        # Get total number of possible nodes below current parent.
         curr_tot_nodes = self.get_node_count(self.max_level - level)
 
-        # Calculate right offset.
+        # Initialize child's index.
         col_idx = curr_tot_nodes // 2
-        for curr_level, direction in enumerate(path, start=1):
-            if direction == "R":
-                tot_left_nodes = self.get_node_count(self.max_level - curr_level)
-                col_idx += tot_left_nodes + 1
 
-        yield level, col_idx, curr_node.value
+        # Based on child's type, calculate its offset from parent.
+        if child_type == "L":
+            col_idx = par_idx - 1 - col_idx
+        elif child_type == "R":
+            col_idx = par_idx + 1 + col_idx
 
-        left_node, left_idx = self.get_left_child(curr_idx)
-        if left_node is not None:
-            yield from self.crawl_heap(left_idx, level + 1, path + "L")
+        yield level, col_idx, node.value
 
-        right_node, right_idx = self.get_right_child(curr_idx)
-        if right_node is not None:
-            yield from self.crawl_heap(right_idx, level + 1, path + "R")
+        # Handle left child.
+        left_node_idx = self.get_left_child_idx(node_idx)
+        if left_node_idx != -1:
+            yield from self.crawl_heap(left_node_idx, "L", level + 1, col_idx)
+
+        # Handle right child.
+        right_node_idx = self.get_right_child_idx(node_idx)
+        if right_node_idx != -1:
+            yield from self.crawl_heap(right_node_idx, "R", level + 1, col_idx)
 
     def display_heap(self):
         """
