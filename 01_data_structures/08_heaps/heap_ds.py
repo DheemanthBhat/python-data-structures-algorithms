@@ -52,7 +52,7 @@ class Heap:
 
     def __get_left_child_idx__(self, curr_idx: int) -> int:
         """
-        Function to get left child's index using current node's index.
+        Function to get left child's index in Heap using current node's index.
         """
         if curr_idx < 0:
             raise ValueError("Input index cannot be less than zero.")
@@ -62,7 +62,7 @@ class Heap:
 
     def __get_right_child_idx__(self, curr_idx: int) -> int:
         """
-        Function to get right child's index using current node's index.
+        Function to get right child's index in Heap using current node's index.
         """
         if curr_idx < 0:
             raise ValueError("Input index cannot be less than zero.")

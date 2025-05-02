@@ -46,20 +46,6 @@ class HeapUtils:
 
         return 2**level - 1
 
-    def get_left_child_idx(self, curr_idx: int) -> int:
-        """
-        Function to get left child's index in heap.
-        """
-        lc_idx = self.heap.__get_left_child_idx__(curr_idx)
-        return -1 if lc_idx > (len(self.heap.nodes) - 1) else lc_idx
-
-    def get_right_child_idx(self, curr_idx: int) -> int:
-        """
-        Function to get right child's index in heap.
-        """
-        rc_idx = self.heap.__get_right_child_idx__(curr_idx)
-        return -1 if rc_idx > (len(self.heap.nodes) - 1) else rc_idx
-
     def get_max_char_len(self) -> int:
         """
         Function to get length of lengthiest value
@@ -100,12 +86,12 @@ class HeapUtils:
         yield level, col_idx, node.value
 
         # Handle left child.
-        left_node_idx = self.get_left_child_idx(node_idx)
+        left_node_idx = self.heap.__get_left_child_idx__(node_idx)
         if left_node_idx != -1:
             yield from self.crawl_heap(left_node_idx, "L", level + 1, col_idx)
 
         # Handle right child.
-        right_node_idx = self.get_right_child_idx(node_idx)
+        right_node_idx = self.heap.__get_right_child_idx__(node_idx)
         if right_node_idx != -1:
             yield from self.crawl_heap(right_node_idx, "R", level + 1, col_idx)
 

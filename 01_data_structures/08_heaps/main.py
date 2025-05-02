@@ -25,9 +25,8 @@ def main(heap_type: int, input_values: list[int], delete_count: int):
     print("\nList Heap values:")
     print(heap.to_list())
 
-    heap_utils = HeapUtils(heap)
     print("\nDisplay Max Heap:")
-    heap_utils.display_heap()
+    HeapUtils(heap).display_heap()
 
     # Delete
     for _ in range(delete_count):
@@ -37,8 +36,7 @@ def main(heap_type: int, input_values: list[int], delete_count: int):
         heap.remove_root()
 
         # Update heap utils before display.
-        heap_utils = HeapUtils(heap)
-        heap_utils.display_heap()
+        HeapUtils(heap).display_heap()
 
 
 if __name__ == "__main__":
