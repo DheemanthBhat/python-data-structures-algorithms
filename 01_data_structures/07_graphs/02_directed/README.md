@@ -42,12 +42,13 @@ Plot graph with only vertices.
 #### 1.2.2 Update
 
 ```log
-Add 8 valid edges to graph:
+Add 9 valid edges to graph:
 Adding edge from Vertex(value='A') to Vertex(value='B').
 Adding edge from Vertex(value='B') to Vertex(value='C').
 Adding edge from Vertex(value='C') to Vertex(value='D').
 Adding edge from Vertex(value='D') to Vertex(value='A').
 Adding edge from Vertex(value='D') to Vertex(value='E').
+Adding edge from Vertex(value='E') to Vertex(value='E').
 Adding edge from Vertex(value='D') to Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='Y')'
 Adding edge from Vertex(value='Y') to Vertex(value='D').
@@ -60,7 +61,7 @@ Vertex(value='A') => [Vertex(value='B')]
 Vertex(value='B') => [Vertex(value='C')]
 Vertex(value='C') => [Vertex(value='D')]
 Vertex(value='D') => [Vertex(value='A'), Vertex(value='E')]
-Vertex(value='E') => []
+Vertex(value='E') => [Vertex(value='E')]
 
 Plot graph after adding edges.
 ```
@@ -79,7 +80,7 @@ Adjacency list:
 Vertex(value='A') => [Vertex(value='B')]
 Vertex(value='B') => [Vertex(value='C')]
 Vertex(value='C') => []
-Vertex(value='E') => []
+Vertex(value='E') => [Vertex(value='E')]
 
 Plot graph after deleting vertices.
 ```
@@ -101,7 +102,7 @@ Adjacency list:
 Vertex(value='A') => [Vertex(value='B')]
 Vertex(value='B') => []
 Vertex(value='C') => []
-Vertex(value='E') => []
+Vertex(value='E') => [Vertex(value='E')]
 
 Plot graph after deleting edges.
 ```

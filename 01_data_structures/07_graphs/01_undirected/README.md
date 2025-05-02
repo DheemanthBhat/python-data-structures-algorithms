@@ -48,6 +48,7 @@ Adding edges between Vertex(value='B') and Vertex(value='C').
 Adding edges between Vertex(value='C') and Vertex(value='D').
 Adding edges between Vertex(value='D') and Vertex(value='A').
 Adding edges between Vertex(value='D') and Vertex(value='E').
+Adding edges between Vertex(value='E') and Vertex(value='E').
 Adding edges between Vertex(value='D') and Vertex(value='Y').
 ERROR: Not found: 'Vertex(value='Y')'
 Adding edges between Vertex(value='Y') and Vertex(value='D').
@@ -60,7 +61,7 @@ Vertex(value='A') => [Vertex(value='B'), Vertex(value='D')]
 Vertex(value='B') => [Vertex(value='A'), Vertex(value='C')]
 Vertex(value='C') => [Vertex(value='B'), Vertex(value='D')]
 Vertex(value='D') => [Vertex(value='C'), Vertex(value='A'), Vertex(value='E')]
-Vertex(value='E') => [Vertex(value='D')]
+Vertex(value='E') => [Vertex(value='D'), Vertex(value='E'), Vertex(value='E')]
 
 Plot graph after adding edges.
 ```
@@ -79,7 +80,7 @@ Adjacency list:
 Vertex(value='A') => [Vertex(value='B')]
 Vertex(value='B') => [Vertex(value='A'), Vertex(value='C')]
 Vertex(value='C') => [Vertex(value='B')]
-Vertex(value='E') => []
+Vertex(value='E') => [Vertex(value='E'), Vertex(value='E')]
 
 Plot graph after deleting vertices.
 ```
@@ -101,7 +102,7 @@ Adjacency list:
 Vertex(value='A') => [Vertex(value='B')]
 Vertex(value='B') => [Vertex(value='A')]
 Vertex(value='C') => []
-Vertex(value='E') => []
+Vertex(value='E') => [Vertex(value='E'), Vertex(value='E')]
 
 Plot graph after deleting edges.
 ```

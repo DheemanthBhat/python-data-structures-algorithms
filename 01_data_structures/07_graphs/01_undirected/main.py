@@ -38,9 +38,10 @@ def test_update(grp: UndirectedGraph):
         [Vertex("C"), Vertex("D")],
         [Vertex("D"), Vertex("A")],
         [Vertex("D"), Vertex("E")],
+        [Vertex("E"), Vertex("E")],  # Self loop.
         [Vertex("D"), Vertex("Y")],  # RHS vertex does not exist.
         [Vertex("Y"), Vertex("D")],  # LHS vertex does not exist.
-        [Vertex("X"), Vertex("Y")],  # Both vertex does not exist.
+        [Vertex("X"), Vertex("Y")],  # Both vertices does not exist.
     ]
     print("\nAdd valid edges to graph:")
 
