@@ -45,21 +45,21 @@ class Matrix:
     col_count: InitVar[int]
     rows: list[Row] = field(init=False)
 
-    def __get_value_len__(self, node: Node, lengthiest: int = -1):
+    def _get_value_len(self, node: Node, lengthiest: int = -1):
         """
         Function to get length of each value in Binary search Tree.
         """
         yield len(str(node.value))
 
         if node.left is not None:
-            yield from self.__get_value_len__(node.left, lengthiest)
+            yield from self._get_value_len(node.left, lengthiest)
 
         if node.right is not None:
-            yield from self.__get_value_len__(node.right, lengthiest)
+            yield from self._get_value_len(node.right, lengthiest)
 
     def __post_init__(self, bst: BinarySearchTree, row_count: int, col_count: int):
         # Get char length of lengthiest value in Binary search Tree.
-        max_char_len: int = max(list(self.__get_value_len__(bst.root)))
+        max_char_len: int = max(list(self._get_value_len(bst.root)))
         self.rows: list[Row] = [Row(col_count, max_char_len) for _ in range(row_count)]
 
     def __getitem__(self, row_idx: int):

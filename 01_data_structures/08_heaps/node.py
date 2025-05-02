@@ -9,7 +9,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True, slots=True)
 class Node:
     """
-    Definition for two pointer Node.
+    Definition for data Node.
     """
 
     value: Any

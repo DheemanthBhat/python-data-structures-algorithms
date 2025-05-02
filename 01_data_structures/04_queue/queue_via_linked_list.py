@@ -1,5 +1,5 @@
 """
-Module containing Queue data structure implemented using singly linked list.
+Module containing implementation for Queue data structure using Singly Linked List.
 """
 
 from typing import Any
@@ -18,7 +18,7 @@ class Queue:
         self.last: Node = None
         self.length: int = 0
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -97,7 +97,7 @@ class Queue:
         """
         Function to push item into Queue.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.first = new_node
@@ -139,7 +139,7 @@ class Queue:
         self.last = temp_node
 
     # Delete
-    def __reset__(self):
+    def _reset(self):
         """
         Function to reset Queue.
         """
@@ -157,7 +157,7 @@ class Queue:
         del_node: Node = self.first
 
         if self.length == 1:
-            self.__reset__()
+            self._reset()
             return del_node
 
         self.first = self.first.next

@@ -1,5 +1,5 @@
 """
-Module containing singly Linked List data structure.
+Module containing implementation for Singly Linked List data structure.
 """
 
 from typing import Any
@@ -18,7 +18,7 @@ class SinglyLinkedList:
         self.tail: Node = None
         self.length: int = 0
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -101,7 +101,7 @@ class SinglyLinkedList:
         """
         Function to insert item at the end of linked list.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.head = new_node
@@ -116,7 +116,7 @@ class SinglyLinkedList:
         """
         Function to insert item at the beginning of a linked list.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.head = new_node
@@ -140,7 +140,7 @@ class SinglyLinkedList:
         if idx == self.length:
             return self.append(value)
 
-        new_node = self.__create_node__(value)
+        new_node = self._create_node(value)
         prev_node = self[idx - 1]  # Time complexity: O(n)
         new_node.next = prev_node.next
         prev_node.next = new_node
@@ -178,7 +178,7 @@ class SinglyLinkedList:
         self.tail = temp_node
 
     # Delete
-    def __reset__(self):
+    def _reset(self):
         """
         Function to reset linked list.
         """
@@ -196,7 +196,7 @@ class SinglyLinkedList:
         del_node = self.head
 
         if self.length == 1:
-            self.__reset__()
+            self._reset()
             return del_node
 
         self.head = self.head.next
@@ -214,7 +214,7 @@ class SinglyLinkedList:
         del_node: Node = self.tail
 
         if self.length == 1:
-            self.__reset__()
+            self._reset()
             return del_node
 
         prev_node: Node = None

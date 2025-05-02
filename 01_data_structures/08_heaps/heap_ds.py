@@ -19,7 +19,7 @@ class Heap:
         self.nodes: list[Node] = list()
         self.heap_type = heap_type
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -27,7 +27,7 @@ class Heap:
         return new_node
 
     # Read
-    def __meets_swap_criteria__(self, par_node: Node, curr_node: Node):
+    def _meets_swap_criteria(self, par_node: Node, curr_node: Node):
         """
         Function to check if Swap criteria is met.
             1. Max Heap: Value in parent node must be greater than current node.
@@ -41,7 +41,7 @@ class Heap:
 
         raise ValueError("Failed to meet Heap criteria.")
 
-    def __get_parent_idx__(self, curr_idx: int) -> int | None:
+    def _get_parent_idx(self, curr_idx: int) -> int | None:
         """
         Function to get parent's index using current node's index.
         """
@@ -50,7 +50,7 @@ class Heap:
 
         return int((curr_idx - 1) // 2)
 
-    def __get_left_child_idx__(self, curr_idx: int) -> int:
+    def _get_left_child_idx(self, curr_idx: int) -> int:
         """
         Function to get left child's index in Heap using current node's index.
         """
@@ -60,7 +60,7 @@ class Heap:
         lc_idx = int((curr_idx * 2) + 1)
         return -1 if lc_idx > (len(self.nodes) - 1) else lc_idx
 
-    def __get_right_child_idx__(self, curr_idx: int) -> int:
+    def _get_right_child_idx(self, curr_idx: int) -> int:
         """
         Function to get right child's index in Heap using current node's index.
         """
@@ -77,7 +77,7 @@ class Heap:
         return [node.value for node in self.nodes]
 
     # Update
-    def __swap_nodes__(self, idx_1: int, idx_2: int):
+    def _swap_nodes(self, idx_1: int, idx_2: int):
         """
         Function to swap nodes between indices `idx_1` and `idx_2`.
         """
@@ -90,7 +90,7 @@ class Heap:
         """
         STEP 1: Add item into Heap.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
         self.nodes.append(new_node)
 
         if len(self.nodes) < 2:
@@ -100,20 +100,20 @@ class Heap:
         STEP 2: Swap with parent if value is larger than parent.
         """
         curr_idx: int = len(self.nodes) - 1
-        par_idx = self.__get_parent_idx__(curr_idx)
+        par_idx = self._get_parent_idx(curr_idx)
         par_node: Node = self.nodes[par_idx]
 
-        while curr_idx != 0 and self.__meets_swap_criteria__(par_node, new_node):
+        while curr_idx != 0 and self._meets_swap_criteria(par_node, new_node):
             # Swap current node with parent node.
-            self.__swap_nodes__(curr_idx, par_idx)
+            self._swap_nodes(curr_idx, par_idx)
 
             # Update pointers.
             curr_idx = par_idx
-            par_idx = self.__get_parent_idx__(par_idx) if par_idx > 0 else 0
+            par_idx = self._get_parent_idx(par_idx) if par_idx > 0 else 0
             par_node = self.nodes[par_idx]
 
     # Delete
-    def __meets_sink_criteria__(
+    def _meets_sink_criteria(
         self,
         curr_idx: int,
         lc_idx: int,
@@ -201,15 +201,15 @@ class Heap:
 
         return leaf_node, swap_with_left, swap_with_right
 
-    def __sink_down__(self, start_idx: int = 0):
+    def _sink_down(self, start_idx: int = 0):
         """
         Function to sink down current node until
         the Binary Tree is a valid Min/Max Heap.
         """
         # Initialize pointers.
         curr_idx = start_idx
-        lc_idx = self.__get_left_child_idx__(curr_idx)
-        rc_idx = self.__get_right_child_idx__(curr_idx)
+        lc_idx = self._get_left_child_idx(curr_idx)
+        rc_idx = self._get_right_child_idx(curr_idx)
 
         """
         Run sink down as long as any of the below criteria is met.
@@ -217,23 +217,23 @@ class Heap:
             2. Left child is swappable with current node.
             2. Right child is swappable with current node.
         """
-        while any(criteria := self.__meets_sink_criteria__(curr_idx, lc_idx, rc_idx)):
+        while any(criteria := self._meets_sink_criteria(curr_idx, lc_idx, rc_idx)):
             leaf_node, swap_with_left, swap_with_right = criteria
 
             if leaf_node:
                 break
 
             elif swap_with_left:
-                self.__swap_nodes__(curr_idx, lc_idx)
+                self._swap_nodes(curr_idx, lc_idx)
                 curr_idx = lc_idx  # New Parent
 
             elif swap_with_right:
-                self.__swap_nodes__(curr_idx, rc_idx)
+                self._swap_nodes(curr_idx, rc_idx)
                 curr_idx = rc_idx  # New Parent
 
             # Update pointers.
-            lc_idx = self.__get_left_child_idx__(curr_idx)
-            rc_idx = self.__get_right_child_idx__(curr_idx)
+            lc_idx = self._get_left_child_idx(curr_idx)
+            rc_idx = self._get_right_child_idx(curr_idx)
 
     def remove_root(self):
         """
@@ -252,10 +252,10 @@ class Heap:
         """
         root_idx = 0
         last_idx = len(self.nodes) - 1
-        self.__swap_nodes__(root_idx, last_idx)
+        self._swap_nodes(root_idx, last_idx)
         self.nodes.pop()
 
         """
         STEP 3: Sink down Heap starting from root node.
         """
-        self.__sink_down__(start_idx=root_idx)
+        self._sink_down(start_idx=root_idx)

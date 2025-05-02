@@ -86,12 +86,12 @@ class HeapUtils:
         yield level, col_idx, node.value
 
         # Handle left child.
-        left_node_idx = self.heap.__get_left_child_idx__(node_idx)
+        left_node_idx = self.heap._get_left_child_idx(node_idx)
         if left_node_idx != -1:
             yield from self.crawl_heap(left_node_idx, "L", level + 1, col_idx)
 
         # Handle right child.
-        right_node_idx = self.heap.__get_right_child_idx__(node_idx)
+        right_node_idx = self.heap._get_right_child_idx(node_idx)
         if right_node_idx != -1:
             yield from self.crawl_heap(right_node_idx, "R", level + 1, col_idx)
 
