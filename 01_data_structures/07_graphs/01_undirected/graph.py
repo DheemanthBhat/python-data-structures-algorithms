@@ -35,12 +35,11 @@ class UndirectedGraph:
         if self.adj_list.get(vtx_2, None) is None:
             raise ValueError(f"Not found: '{vtx_2}'")
 
-        # Add edge from `vtx_1` to `vtx_2`.
-        if vtx_2 not in self.adj_list[vtx_1]:
+        if vtx_2 not in self.adj_list[vtx_1] and vtx_1 not in self.adj_list[vtx_2]:
+            # Add edge from `vtx_1` to `vtx_2`.
             self.adj_list[vtx_1].append(vtx_2)
 
-        # Add edge from `vtx_2` to `vtx_1`.
-        if vtx_1 not in self.adj_list[vtx_2]:
+            # Add edge from `vtx_2` to `vtx_1`.
             self.adj_list[vtx_2].append(vtx_1)
 
     # Delete
@@ -72,10 +71,9 @@ class UndirectedGraph:
         if self.adj_list.get(vtx_2, None) is None:
             raise ValueError(f"Not found: '{vtx_2}'")
 
-        # Remove edge from `vtx_1` to `vtx_2`.
-        if vtx_2 in self.adj_list[vtx_1]:
+        if vtx_2 in self.adj_list[vtx_1] and vtx_1 in self.adj_list[vtx_2]:
+            # Remove edge from `vtx_1` to `vtx_2`.
             self.adj_list[vtx_1].remove(vtx_2)
 
-        # Remove edge from `vtx_2` to `vtx_1`.
-        if vtx_1 in self.adj_list[vtx_2]:
+            # Remove edge from `vtx_2` to `vtx_1`.
             self.adj_list[vtx_2].remove(vtx_1)
