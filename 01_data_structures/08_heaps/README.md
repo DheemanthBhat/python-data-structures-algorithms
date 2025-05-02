@@ -46,6 +46,26 @@ Max level: 3
      99              75
  58      72      61      18
 
+
+Deleting root: Node(value=100)
+Heap after delete with new root:
+Root: Node(value=99)
+Max level: 3
+
+         99
+   72          75
+58    18    61
+
+
+Deleting root: Node(value=99)
+Heap after delete with new root:
+Root: Node(value=75)
+Max level: 3
+
+         75
+   72          61
+58    18
+
 ************************************************************
 ```
 
@@ -69,6 +89,38 @@ Max level: 4
          18                      27
    58          33          72          55
 99    99    61
+
+
+Deleting root: Node(value=0)
+Heap after delete with new root:
+Root: Node(value=18)
+Max level: 4
+
+                     18
+         33                      27
+   58          61          72          55
+99    99
+
+
+Deleting root: Node(value=18)
+Heap after delete with new root:
+Root: Node(value=27)
+Max level: 4
+
+                     27
+         33                      55
+   58          61          72          99
+99
+
+
+Deleting root: Node(value=27)
+Heap after delete with new root:
+Root: Node(value=33)
+Max level: 3
+
+         33
+   58          55
+99    61    72    99
 
 ************************************************************
 ```
