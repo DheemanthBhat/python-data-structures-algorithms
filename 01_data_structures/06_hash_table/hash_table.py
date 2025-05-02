@@ -17,14 +17,14 @@ class HashTable:
         self.data_map: list[list[Node]] = [None] * self.size
         self.allow_duplicates = allow_duplicates
 
-    def __create_node__(self, key: str, value: Any) -> Node:
+    def _create_node(self, key: str, value: Any) -> Node:
         """
         Function to create new node.
         """
         new_node = Node(key, value)
         return new_node
 
-    def __get_index__(self, item: str | Node) -> int:
+    def _get_index(self, item: str | Node) -> int:
         """
         Function to get index, where node will be positioned in
         the data-map, by generating hash of key-string or Node.
@@ -36,7 +36,7 @@ class HashTable:
         """
         Function to get item(s) from data-map using its key.
         """
-        index = self.__get_index__(key)
+        index = self._get_index(key)
 
         if self.data_map[index] is None:
             return None
@@ -74,10 +74,10 @@ class HashTable:
         Function to add item into Hash Table.
         """
         # Create new node using input key and value.
-        new_node = self.__create_node__(key, value)
+        new_node = self._create_node(key, value)
 
         # Get address where new node must be placed in data-map.
-        index = self.__get_index__(new_node)
+        index = self._get_index(new_node)
 
         # Initialize data-map with empty list
         # at the derived `index` if it is empty.

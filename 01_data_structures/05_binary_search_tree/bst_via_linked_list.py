@@ -17,7 +17,7 @@ class BinarySearchTree:
         self.level: int = 0
         self.allow_duplicates: bool = allow_duplicates
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -48,7 +48,7 @@ class BinarySearchTree:
         """
         STEP 1: Create new node.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         """
         STEP 2: Create Binary Search Tree with new node

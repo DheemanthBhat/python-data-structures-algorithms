@@ -1,5 +1,5 @@
 """
-Module containing doubly Linked List data structure.
+Module containing implementation for Doubly Linked List data structure.
 """
 
 from typing import Any
@@ -18,7 +18,7 @@ class DoublyLinkedList:
         self.tail: Node = None
         self.length: int = 0
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -26,7 +26,7 @@ class DoublyLinkedList:
         return new_node
 
     # Read
-    def __get_from_head__(self, idx: int) -> Node:
+    def _get_from_head(self, idx: int) -> Node:
         """
         Function to fetch item at index `idx` from
         linked list by traversing it from the head.
@@ -40,7 +40,7 @@ class DoublyLinkedList:
 
         return curr_node
 
-    def __get_from_tail__(self, idx: int) -> Node:
+    def _get_from_tail(self, idx: int) -> Node:
         """
         Function to fetch item at index `idx` from
         linked list by traversing it from the tail.
@@ -63,9 +63,9 @@ class DoublyLinkedList:
             raise IndexError(f"Index: {idx} out of range.")
 
         if idx < self.length // 2:
-            return self.__get_from_head__(idx)
+            return self._get_from_head(idx)
         else:
-            return self.__get_from_tail__(idx)
+            return self._get_from_tail(idx)
 
     @__getitem__.register
     def _(self, idx_range: slice) -> list[Any]:
@@ -127,7 +127,7 @@ class DoublyLinkedList:
         """
         Function to insert item at the end of linked list.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.head = new_node
@@ -143,7 +143,7 @@ class DoublyLinkedList:
         """
         Function to insert item at the beginning of a linked list.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.head = new_node
@@ -168,7 +168,7 @@ class DoublyLinkedList:
         if idx == self.length:
             return self.append(value)
 
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
         curr_node: Node = self[idx]  # Time complexity: O(n)
         prev_node: Node = curr_node.prev
 
@@ -212,7 +212,7 @@ class DoublyLinkedList:
         self.tail = temp_node
 
     # Delete
-    def __reset__(self):
+    def _reset(self):
         """
         Function to reset linked list.
         """
@@ -230,7 +230,7 @@ class DoublyLinkedList:
         del_node = self.head
 
         if self.length == 1:
-            self.__reset__()
+            self._reset()
             return del_node
 
         self.head = self.head.next
@@ -249,7 +249,7 @@ class DoublyLinkedList:
         del_node: Node = self.tail
 
         if self.length == 1:
-            self.__reset__()
+            self._reset()
             return del_node
 
         self.tail = self.tail.prev

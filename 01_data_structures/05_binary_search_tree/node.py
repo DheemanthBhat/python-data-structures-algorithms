@@ -18,7 +18,7 @@ class Node:
 
     def __str__(self) -> str:
         """
-        Function to print Node as string
+        Function to print Node as string.
         """
         left_value = self.left.value if self.left else None
         right_value = self.right.value if self.right else None

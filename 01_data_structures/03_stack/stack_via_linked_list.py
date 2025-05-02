@@ -17,7 +17,7 @@ class Stack:
         self.top: Node = None
         self.length: int = 0
 
-    def __create_node__(self, value: Any) -> Node:
+    def _create_node(self, value: Any) -> Node:
         """
         Function to create new node.
         """
@@ -96,7 +96,7 @@ class Stack:
         """
         Function to push item into Stack.
         """
-        new_node: Node = self.__create_node__(value)
+        new_node: Node = self._create_node(value)
 
         if self.length == 0:
             self.top = new_node

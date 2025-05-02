@@ -1,8 +1,7 @@
 """
-Module containing implement for Directed Graph data structure.
+Module containing implementation for Directed Graph data structure.
 """
 
-from typing import Any
 from vertex import Vertex
 
 
@@ -14,13 +13,6 @@ class DirectedGraph:
     # Create
     def __init__(self):
         self.adj_list: dict[Vertex, list[Vertex]] = dict()
-
-    def __create_vertex__(self, ip_value: Any):
-        """
-        Function to create new vertex.
-        """
-        vtx = Vertex(value=ip_value)
-        return vtx
 
     # Update
     def add_vertex(self, vtx: Vertex):
