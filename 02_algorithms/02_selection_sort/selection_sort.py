@@ -1,14 +1,14 @@
 """
-Module containing implementation for Bubble Sort algorithm.
+Module containing implementation for Selection Sort algorithm.
 """
 
 from typing import Any
 from node import Node
 
 
-class BubbleSort:
+class SelectionSort:
     """
-    Definition for Bubble Sort algorithm.
+    Definition for Selection Sort.
     """
 
     # Create
@@ -45,9 +45,16 @@ class BubbleSort:
 
     def sort(self):
         """
-        Function to sort nodes using Bubble Sort algorithm.
+        Function to sort nodes using Selection Sort algorithm.
         """
-        for i in range(1, self.node_count):
-            for j in range(0, self.node_count - i):
-                if self._check_swap_criteria(idx_1=j, idx_2=j + 1) is True:
-                    self._swap_nodes(j, j + 1)
+        for i in range(0, self.node_count - 1):
+            target_idx = i
+
+            # Locate target (min/max) index.
+            for j in range(i + 1, self.node_count):
+                if self._check_swap_criteria(idx_1=target_idx, idx_2=j) is True:
+                    target_idx = j
+
+            if i != target_idx:
+                # Swap target node with current node.
+                self._swap_nodes(i, target_idx)
