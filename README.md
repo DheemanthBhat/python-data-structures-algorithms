@@ -30,6 +30,7 @@ This repository covers following data structures and algorithms:
 
 1. [Bubble Sort](02_algorithms/01_bubble_sort/README.md)
 1. [Selection Sort](02_algorithms/02_selection_sort/README.md)
+1. [Insertion Sort](02_algorithms/03_insertion_sort/README.md)
 
 ### 1.3 Technologies
 
