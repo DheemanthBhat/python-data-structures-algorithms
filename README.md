@@ -32,6 +32,10 @@ This repository covers following data structures and algorithms:
 1. [Selection Sort](02_algorithms/02_selection_sort/README.md)
 1. [Insertion Sort](02_algorithms/03_insertion_sort/README.md)
 
+#### 1.2.3 Others
+
+1. [Bubble sort vs. Selection sort vs. Insertion sort](02_algorithms/basic_sort/README.md)
+
 ### 1.3 Technologies
 
 1. Python: Programming language (version >= 3.12).

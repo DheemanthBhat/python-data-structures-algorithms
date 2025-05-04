@@ -14,18 +14,18 @@ def main(input_values: list[int], reverse: bool):
     print("Sort below input values using Insertion Sort algorithm:")
     print(input_values)
 
-    bbl_sort = InsertionSort(
+    ins_sort = InsertionSort(
         nodes=[Node(value) for _, value in enumerate(input_values)],
         reverse=reverse,
     )
 
     # Update
     print("\nSorting using Insertion Sort...")
-    bbl_sort.sort()
+    ins_sort.sort()
 
     # Read
     print("\nSorted list:")
-    print(bbl_sort.to_list())
+    print(ins_sort.to_list())
 
 
 if __name__ == "__main__":

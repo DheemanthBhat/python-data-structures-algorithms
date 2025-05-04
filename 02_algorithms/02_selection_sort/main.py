@@ -14,18 +14,18 @@ def main(input_values: list[int], reverse: bool):
     print("Sort below input values using Selection Sort algorithm:")
     print(input_values)
 
-    bbl_sort = SelectionSort(
+    sel_sort = SelectionSort(
         nodes=[Node(value) for _, value in enumerate(input_values)],
         reverse=reverse,
     )
 
     # Update
     print("\nSorting using Selection Sort...")
-    bbl_sort.sort()
+    sel_sort.sort()
 
     # Read
     print("\nSorted list:")
-    print(bbl_sort.to_list())
+    print(sel_sort.to_list())
 
 
 if __name__ == "__main__":
