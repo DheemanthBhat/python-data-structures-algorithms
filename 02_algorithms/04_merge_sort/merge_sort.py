@@ -50,19 +50,6 @@ class MergeSort:
         return [node.value for node in nodes]
 
     # Update
-    def _split(self, nodes: list[Node]):
-        """
-        Function to split list into two smaller list until the list size is one.
-        """
-        if (node_count := len(nodes)) > 1:
-            split_1 = nodes[0 : node_count // 2]
-            split_2 = nodes[node_count // 2 :]
-
-            yield from self._split(split_1)
-            yield from self._split(split_2)
-
-            yield split_1, split_2
-
     def _merge(self, split_1: list[Node], split_2: list[Node]):
         """
         Function to merge two sorted splits `split_1` and `split_2`.
@@ -89,15 +76,26 @@ class MergeSort:
 
         return sorted_nodes
 
-    def sort(self):
+    def _merge_sort(self, nodes) -> list[Node]:
+        """
+        Recursive function to sort nodes using Merge Sort algorithm.
+        """
+        if (node_count := len(nodes)) == 1:
+            return nodes
+
+        # Splits nodes by half its size.
+        split_1 = nodes[0 : node_count // 2]
+        split_2 = nodes[node_count // 2 :]
+
+        # Sort both the splits recursively.
+        sorted_split_1 = self._merge_sort(split_1)
+        sorted_split_2 = self._merge_sort(split_2)
+
+        # Merge and return sorted splits.
+        return self._merge(sorted_split_1, sorted_split_2)
+
+    def sort(self) -> list[Node]:
         """
         Function to sort nodes using Merge Sort algorithm.
         """
-        sorted_nodes = []
-        for split_1, split_2 in self._split(self.nodes):
-            print("\nSplit 1:", split_1)
-            print("Split 2:", split_2)
-
-            sorted_nodes = self._merge(split_1, split_2)
-
-        return sorted_nodes
+        return self._merge_sort(self.nodes)

@@ -30,7 +30,7 @@ def main(input_values: list[int], reverse: bool):
 
 if __name__ == "__main__":
     print("*" * 10, "Case 1: Sort in ascending order", "*" * 10)
-    main(input_values=[4, 2, 6, 5, 1], reverse=False)
+    main(input_values=[4, 2, 6, 5, 1, 3], reverse=False)
     print("*" * 55, "\n\n")
 
     print("*" * 10, "Case 2: Sort in descending order", "*" * 10)
