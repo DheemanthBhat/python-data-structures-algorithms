@@ -42,27 +42,26 @@ class MergeSort:
 
         return n1_idx, n2_idx
 
-    def to_list(self) -> list[Any]:
+    def to_list(self, nodes: list[Node] | None) -> list[Any]:
         """
-        Function to list values in nodes
+        Function to list values in nodes.
         """
-        return [node.value for node in self.nodes]
+        nodes: list[Node] = nodes or self.nodes
+        return [node.value for node in nodes]
 
     # Update
     def _split(self, nodes: list[Node]):
         """
         Function to split list into two smaller list until the list size is one.
         """
-        node_count = len(nodes)
+        if (node_count := len(nodes)) > 1:
+            split_1 = nodes[0 : node_count // 2]
+            split_2 = nodes[node_count // 2 :]
 
-        split_1 = nodes[0 : node_count // 2]
-        split_2 = nodes[node_count // 2 :]
-
-        if len(split_1) == 1 or len(split_2) == 1:
-            yield split_1, split_2
-        else:
             yield from self._split(split_1)
             yield from self._split(split_2)
+
+            yield split_1, split_2
 
     def _merge(self, split_1: list[Node], split_2: list[Node]):
         """
@@ -83,16 +82,10 @@ class MergeSort:
                 j += 1
 
         if i != len(split_1):
-            if self.reverse is True:
-                sorted_nodes = split_1[i:] + sorted_nodes
-            else:
-                sorted_nodes += split_1[i:]
+            sorted_nodes += split_1[i:]
 
         if j != len(split_2):
-            if self.reverse is True:
-                sorted_nodes = split_2[j:] + sorted_nodes
-            else:
-                sorted_nodes += split_2[j:]
+            sorted_nodes += split_2[j:]
 
         return sorted_nodes
 
@@ -100,37 +93,11 @@ class MergeSort:
         """
         Function to sort nodes using Merge Sort algorithm.
         """
-        """
-        STEP 1: Split nodes array until the array size is one.
-        """
         sorted_nodes = []
-        # for idx in range(0, self.node_count, 2):
-        #     print(f"\n{idx}")
-
-        #     split_1 = [self.nodes[idx]]
-        #     print("Split 1:", split_1)
-
-        #     if idx + 1 < self.node_count:
-        #         split_2 = [self.nodes[idx + 1]]
-        #         print("Split 2:", split_2)
-
-        #     if split_1 is not None and split_2 is not None:
-        #         sorted_nodes += self._merge(split_1, split_2)
-
-        # print("Output:")
-        # print(sorted_nodes)
-
         for split_1, split_2 in self._split(self.nodes):
             print("\nSplit 1:", split_1)
             print("Split 2:", split_2)
 
-            m_res = self._merge(split_1, split_2)
-            print("Merge result:", m_res)
+            sorted_nodes = self._merge(split_1, split_2)
 
-            sorted_nodes += m_res
-
-        print("\nOutput:")
-        print(sorted_nodes)
-        """
-        STEP 2: Merge sorted array.
-        """
+        return sorted_nodes

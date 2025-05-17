@@ -21,11 +21,11 @@ def main(input_values: list[int], reverse: bool):
 
     # Update
     print("\nSorting using Merge Sort...")
-    mrg_sort.sort()
+    sorted_nodes: list[Node] = mrg_sort.sort()
 
     # Read
     print("\nSorted list:")
-    print(mrg_sort.to_list())
+    print(mrg_sort.to_list(sorted_nodes))
 
 
 if __name__ == "__main__":
