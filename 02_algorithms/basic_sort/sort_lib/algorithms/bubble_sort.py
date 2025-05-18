@@ -12,7 +12,7 @@ class BubbleSort(BasicSort):
 
     def sort(self):
         """
-        Function to sort nodes using Bubble Sort algorithm.
+        Function to sort list of nodes using Bubble Sort algorithm.
         """
         for i in range(1, self.node_count):
             for j in range(0, self.node_count - i):
