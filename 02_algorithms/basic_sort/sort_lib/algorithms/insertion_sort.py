@@ -7,12 +7,12 @@ from basic_sort.sort_lib.algorithms.basic_sort import BasicSort
 
 class InsertionSort(BasicSort):
     """
-    Definition for Insertion Sort.
+    Definition for Insertion Sort algorithm.
     """
 
     def sort(self) -> tuple[int, int]:
         """
-        Function to sort nodes using Insertion Sort algorithm.
+        Function to sort list of nodes using Insertion Sort algorithm.
         """
         for i in range(1, self.node_count):
             for j in range(i, 0, -1):
