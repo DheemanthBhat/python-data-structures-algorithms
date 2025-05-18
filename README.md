@@ -32,6 +32,7 @@ This repository covers following data structures and algorithms:
 1. [Selection Sort](02_algorithms/02_selection_sort/README.md)
 1. [Insertion Sort](02_algorithms/03_insertion_sort/README.md)
 1. [Merge Sort](02_algorithms/04_merge_sort/README.md)
+1. [Quick Sort](02_algorithms/05_quick_sort/README.md)
 
 #### 1.2.3 Others
 
