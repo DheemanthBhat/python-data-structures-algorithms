@@ -25,13 +25,13 @@ class BreadthFirstSearch:
         results: list[Any] = list()
 
         while self.queue.length > 0:
-            # STEP 1: Pull node from queue.
+            # STEP 1: Pull current node from queue.
             curr_node: Node = self.queue.dequeue().value
 
-            # STEP 2: Push node to results.
+            # STEP 2: Push node's value to results.
             results.append(curr_node.value)
 
-            # STEP 3: Add children to queue.
+            # STEP 3: Add node's children to queue.
             if curr_node.left is not None:
                 self.queue.enqueue(curr_node.left)
 

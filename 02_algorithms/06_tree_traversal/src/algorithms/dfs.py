@@ -13,7 +13,7 @@ class DepthFirstSearch:
 
     def pre_order(self, curr_node: Node) -> Any:
         """
-        Function to traverse Binary tree in pre order.
+        Function to traverse Binary tree in pre-order.
         """
         yield curr_node.value
 
@@ -25,7 +25,7 @@ class DepthFirstSearch:
 
     def post_order(self, curr_node: Node) -> Any:
         """
-        Function to traverse Binary tree in pre order.
+        Function to traverse Binary tree in post-order.
         """
         if curr_node.left is not None:
             yield from self.post_order(curr_node.left)
@@ -37,7 +37,7 @@ class DepthFirstSearch:
 
     def in_order(self, curr_node: Node) -> Any:
         """
-        Function to traverse Binary tree in pre order.
+        Function to traverse Binary tree in in-order.
         """
         if curr_node.left is not None:
             yield from self.in_order(curr_node.left)

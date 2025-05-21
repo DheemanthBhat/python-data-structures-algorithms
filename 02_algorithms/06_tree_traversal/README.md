@@ -30,7 +30,7 @@ Max level: 4
  0    25    35    41    54    56    75    90
 
 
-Tree as list:
+Tree nodes listed using Breadth First Search:
 [50, 30, 70, 20, 40, 55, 80, 0, 25, 35, 41, 54, 56, 75, 90]
 ************************************************************
 ```
@@ -52,7 +52,7 @@ Max level: 4
                                           80
 
 
-Tree as list:
+Tree nodes listed using Breadth First Search:
 [50, 40, 60, 45, 55, 70, 80]
 ************************************************************
 ```

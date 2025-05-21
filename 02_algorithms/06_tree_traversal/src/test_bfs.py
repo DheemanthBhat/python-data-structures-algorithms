@@ -32,7 +32,7 @@ def main(input_values: list[Any]):
     bfs = BreadthFirstSearch(root_node=bst.root)
     results = bfs.tree_traversal()
 
-    print("\nTree as list:")
+    print("\nTree nodes listed using Breadth First Search:")
     print(results)
 
 

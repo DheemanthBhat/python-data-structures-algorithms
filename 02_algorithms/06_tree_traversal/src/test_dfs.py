@@ -1,5 +1,5 @@
 """
-Module to test Breadth First Search algorithm.
+Module to test Depth First Search algorithm.
 """
 
 from typing import Any
@@ -10,7 +10,7 @@ from src.utils.bst_utils import BSTUtils
 
 def main(input_values: list[Any]):
     """
-    Function to test Breadth First Search algorithm.
+    Function to test Depth First Search algorithm.
     """
 
     # Build a binary tree (BST for example).
