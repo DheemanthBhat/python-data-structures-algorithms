@@ -7,13 +7,13 @@
 Test Breadth First Search algorithm using below commands:
 
 ```sh
-cd 02_algorithms/06_tree_traversal
+cd 02_algorithms/07_tree_traversal
 python -m src.test_bfs
 ```
 
 ### 1.2 Output
 
-#### Case 1: Complete Binary Tree
+#### Case 1: BFS on Complete Binary Tree
 
 ```log
 *************** Case 1: Complete Binary Tree ***************
@@ -35,7 +35,7 @@ Tree nodes listed using Breadth First Search:
 ************************************************************
 ```
 
-#### Case 2: Skewed Binary Tree
+#### Case 2: BFS on Skewed Binary Tree
 
 ```log
 *************** Case 2: Skewed Binary Tree ***************
@@ -75,13 +75,13 @@ Depth First Search algorithm has variants when traversing down the tree:
 Test Depth First Search algorithm using below commands:
 
 ```sh
-cd 02_algorithms/06_tree_traversal
+cd 02_algorithms/07_tree_traversal
 python -m src.test_dfs
 ```
 
 ### 2.3 Output
 
-#### Case 1: Complete Binary Tree
+#### Case 1: DFS on Complete Binary Tree
 
 ```log
 *************** Case 1: Complete Binary Tree ***************
@@ -109,7 +109,7 @@ Tree nodes listed in in-order:
 ************************************************************
 ```
 
-#### Case 2: Skewed Binary Tree
+#### Case 2: DFS on Skewed Binary Tree
 
 ```log
 *************** Case 2: Skewed Binary Tree ***************
