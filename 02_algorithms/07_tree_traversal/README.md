@@ -1,8 +1,18 @@
 # Tree Traversal
 
-## 1 Breadth First Search
+## 1 Introduction
 
-### 1.1 Testing
+There two tree traversal techniques:
+
+1. Breadth First Search (BFS)
+1. Depth First Search (DFS)
+
+> **Note**:  
+> Breadth First Search is also called as Level Order Traversal.
+
+## 2 Breadth First Search (BFS)
+
+### 2.1 Testing
 
 Test Breadth First Search algorithm using below commands:
 
@@ -11,7 +21,7 @@ cd 02_algorithms/07_tree_traversal
 python -m src.test_bfs
 ```
 
-### 1.2 Output
+### 2.2 Output
 
 #### Case 1: BFS on Complete Binary Tree
 
@@ -57,11 +67,11 @@ Tree nodes listed using Breadth First Search:
 ************************************************************
 ```
 
-## 2 Depth First Search
+## 3 Depth First Search (DFS)
 
-### 2.1 Introduction
+### 3.1 Introduction
 
-Depth First Search algorithm has variants when traversing down the tree:
+Depth First Search algorithm has three variants when traversing down the tree:
 
 1. Pre-Order
 2. Post-Order
@@ -70,7 +80,7 @@ Depth First Search algorithm has variants when traversing down the tree:
 > **Note**:  
 > Fetching values In-Order while traversing a Binary Tree results in values being sorted in ascending order.
 
-### 2.2 Testing
+### 3.2 Testing
 
 Test Depth First Search algorithm using below commands:
 
@@ -79,7 +89,7 @@ cd 02_algorithms/07_tree_traversal
 python -m src.test_dfs
 ```
 
-### 2.3 Output
+### 3.3 Output
 
 #### Case 1: DFS on Complete Binary Tree
 
