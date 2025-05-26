@@ -3,9 +3,9 @@ Module to test Breadth First Search algorithm.
 """
 
 from typing import Any
-from src.data_structures.tree.bst_via_linked_list import BinarySearchTree
-from src.algorithms.bfs import BreadthFirstSearch
-from src.utils.bst_utils import BSTUtils
+from data_structures.tree.bst_via_linked_list import BinarySearchTree
+from algorithms.bfs import BreadthFirstSearch
+from utils.bst_utils import BSTUtils
 
 
 def main(input_values: list[Any]):

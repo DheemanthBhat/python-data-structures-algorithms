@@ -4,8 +4,8 @@ Module containing dataclasses used for displaying Binary Search Tree.
 
 from typing import Any
 from dataclasses import dataclass, InitVar, field
-from node import Node
-from bst_via_linked_list import BinarySearchTree
+from data_structures.tree.node import Node
+from data_structures.tree.bst_via_linked_list import BinarySearchTree
 
 
 @dataclass

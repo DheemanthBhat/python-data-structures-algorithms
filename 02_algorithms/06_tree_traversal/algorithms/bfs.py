@@ -3,8 +3,8 @@ Module containing implementation for Breadth First Search algorithm.
 """
 
 from typing import Any
-from src.data_structures.tree.node import Node
-from src.data_structures.queue.queue_via_linked_list import Queue
+from data_structures.tree.node import Node
+from data_structures.queue.queue_via_linked_list import Queue
 
 
 class BreadthFirstSearch:

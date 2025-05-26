@@ -3,7 +3,7 @@ Module containing implementation for Queue data structure using Singly Linked Li
 """
 
 from typing import Any
-from src.data_structures.queue.node import Node
+from data_structures.queue.node import Node
 
 
 class Queue:

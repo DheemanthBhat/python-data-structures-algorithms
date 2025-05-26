@@ -11,8 +11,8 @@ Module containing utility functions.
 __deprecated__ = True
 __deprecation_reason__ = "Use `BSTUtils` class in `bst_utils.py`."
 
-from bst_via_linked_list import BinarySearchTree
-from node import Node
+from bst.bst_via_linked_list import BinarySearchTree
+from bst.node import Node
 
 
 def get_node_count(level: int):

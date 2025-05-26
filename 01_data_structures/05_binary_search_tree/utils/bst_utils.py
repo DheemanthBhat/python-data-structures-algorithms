@@ -2,9 +2,9 @@
 Module containing Binary Search Tree utility.
 """
 
-from node import Node
-from bst_via_linked_list import BinarySearchTree
-from bst_matrix import Matrix
+from bst.node import Node
+from bst.bst_via_linked_list import BinarySearchTree
+from utils.bst_matrix import Matrix
 
 
 class BSTUtils:
