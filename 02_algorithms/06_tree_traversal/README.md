@@ -17,8 +17,7 @@ There two tree traversal techniques:
 Test Breadth First Search algorithm using below commands:
 
 ```sh
-cd 02_algorithms/07_tree_traversal
-python -m src.test_bfs
+python 02_algorithms/06_tree_traversal/test_bfs.py
 ```
 
 ### 2.2 Output
@@ -85,8 +84,7 @@ Depth First Search algorithm has three variants when traversing down the tree:
 Test Depth First Search algorithm using below commands:
 
 ```sh
-cd 02_algorithms/07_tree_traversal
-python -m src.test_dfs
+python 02_algorithms/06_tree_traversal/test_dfs.py
 ```
 
 ### 3.3 Output

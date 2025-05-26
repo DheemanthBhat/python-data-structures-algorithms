@@ -3,7 +3,7 @@ Module containing implementation for Depth First Search algorithm.
 """
 
 from typing import Any
-from src.data_structures.tree.node import Node
+from data_structures.tree.node import Node
 
 
 class DepthFirstSearch:

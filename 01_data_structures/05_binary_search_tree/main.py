@@ -3,8 +3,8 @@ Module to test Binary Search Tree.
 """
 
 from typing import Any
-from bst_via_linked_list import BinarySearchTree
-from bst_utils import BSTUtils
+from bst.bst_via_linked_list import BinarySearchTree
+from utils.bst_utils import BSTUtils
 
 
 def main(input_values: list[Any], lookup_values: list[Any], allow_duplicates: bool):

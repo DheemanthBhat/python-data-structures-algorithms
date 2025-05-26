@@ -3,7 +3,7 @@ Module containing implementation for Binary Search Tree data structure.
 """
 
 from typing import Any
-from node import Node
+from bst.node import Node
 
 
 class BinarySearchTree:
