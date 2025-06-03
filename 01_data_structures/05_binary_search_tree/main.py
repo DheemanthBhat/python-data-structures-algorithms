@@ -4,6 +4,7 @@ Module to test Binary Search Tree.
 
 from typing import Any
 from bst.bst_via_linked_list import BinarySearchTree
+# from bst.r_bst_via_linked_list import BinarySearchTree
 from utils.bst_utils import BSTUtils
 
 
