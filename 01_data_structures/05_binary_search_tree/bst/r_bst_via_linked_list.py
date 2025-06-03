@@ -109,6 +109,6 @@ class BinarySearchTree:
             tgt_node.right = new_node
 
         """
-        STEP 5: Update level.
+        STEP 4: Update level.
         """
         self.level = max(curr_level, self.level)
