@@ -44,15 +44,15 @@ class BinarySearchTree:
             return
 
         """
-        STEP 3: Travel (left or right) upto the leaf node by comparing input value
-                with the value in each node in the path leading to the leaf node.
+        STEP 3: Travel (left or right) upto the leaf/half node by comparing input value
+                with the value in each node in the path leading up to the target node.
         """
         curr_node: Node = self.root
-        leaf_node: Node = None
+        tgt_node: Node = None
         curr_level: int = 1
 
         while curr_node is not None:
-            leaf_node = curr_node
+            tgt_node = curr_node
 
             if value >= curr_node.value:
                 if value == curr_node.value and self.allow_duplicates is False:
@@ -64,13 +64,13 @@ class BinarySearchTree:
             curr_level += 1
 
         """
-        STEP 4: Attach new node to the left of leaf node if the input value is
-                less than the value in leaf node otherwise attach it to right.
+        STEP 4: Attach new node to the left of target node if the input value is
+                less than the value in target node otherwise attach it to right.
         """
-        if value < leaf_node.value:
-            leaf_node.left = new_node
+        if value < tgt_node.value:
+            tgt_node.left = new_node
         else:
-            leaf_node.right = new_node
+            tgt_node.right = new_node
 
         """
         STEP 5: Update level.

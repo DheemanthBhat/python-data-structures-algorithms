@@ -92,7 +92,7 @@ def display_bst(bst: BinarySearchTree):
     """
     # Basic non empty validation of BST.
     if bst is None or bst.root is None:
-        print("Tree is empty.")
+        print("Tree is empty!")
 
     print(f"Root: {str(bst.root):<33}")
     print(f"Max level: {bst.level}\n")

@@ -8,7 +8,7 @@ from bst.node import Node
 
 class BinarySearchTree:
     """
-    Definition for Binary Search Tree data structure.
+    Definition for Binary Search Tree data structure with recursive implementation.
     """
 
     # Create

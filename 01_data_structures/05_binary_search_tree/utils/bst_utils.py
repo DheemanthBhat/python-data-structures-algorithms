@@ -15,7 +15,7 @@ class BSTUtils:
     def __init__(self, bst: BinarySearchTree):
         # Basic non empty validation of BST.
         if bst is None or bst.root is None:
-            raise ValueError("Tree is empty.")
+            raise ValueError("Tree is empty!")
 
         self.bst: BinarySearchTree = bst
         self.max_level = self.bst.level
