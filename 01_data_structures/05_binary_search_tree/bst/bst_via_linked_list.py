@@ -189,7 +189,7 @@ class BinarySearchTree:
             par_node.right = child_node
 
     # Delete
-    def delete(self, value: Any):
+    def delete(self, value: Any) -> bool:
         """
         Function to delete a node in Binary Search
         Tree containing the value `value`.
@@ -204,6 +204,9 @@ class BinarySearchTree:
         STEP 2: Traverse to the target node.
         """
         par_node, tgt_node, direction = self._get_family_tree(value)
+
+        if tgt_node is None:
+            return False
 
         """
         STEP 3: Check node type and accordingly handle parent node.
@@ -233,7 +236,7 @@ class BinarySearchTree:
             # Find and detach successor node from Tree.
             ssr_node = self._detach_successor(tgt_node)
 
-            # Copy left and right child of target node to successor node.
+            # Rewire left and right child of target node to successor node.
             ssr_node.left, ssr_node.right = tgt_node.left, tgt_node.right
 
             # Connect successor node to parent of target node.
@@ -245,3 +248,5 @@ class BinarySearchTree:
         """
         if self.root.value == tgt_node.value:
             self.root = ssr_node
+
+        return True

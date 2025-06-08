@@ -39,6 +39,10 @@ Value: '56' found in BST.
 Value: '0' found in BST.
 Value: '-20' NOT found in BST.
 
+Deleting node with value: 36 from BST...
+Node with value: 36 not found in BST.
+
+Deleting node with value: 75 from BST...
 Binary Search Tree after deleting Node: 75
 Root: Node(left=30, value=50, right=70)
 Max level: 4
@@ -49,6 +53,7 @@ Max level: 4
  0    25    35    41    54    56          90
 
 
+Deleting node with value: 56 from BST...
 Binary Search Tree after deleting Node: 56
 Root: Node(left=30, value=50, right=70)
 Max level: 4
@@ -59,6 +64,7 @@ Max level: 4
  0    25    35    41    54                90
 
 
+Deleting node with value: 30 from BST...
 Binary Search Tree after deleting Node: 30
 Root: Node(left=35, value=50, right=70)
 Max level: 4
@@ -91,6 +97,7 @@ Max level: 5
                         24    26    28    30
 
 
+Deleting node with value: 27 from BST...
 Binary Search Tree after deleting Node: 27
 Root: Node(left=21, value=47, right=76)
 Max level: 5
@@ -102,6 +109,7 @@ Max level: 5
                         24          28    30
 
 
+Deleting node with value: 26 from BST...
 Binary Search Tree after deleting Node: 26
 Root: Node(left=21, value=47, right=76)
 Max level: 5
@@ -113,6 +121,7 @@ Max level: 5
                                     28    30
 
 
+Deleting node with value: 47 from BST...
 Binary Search Tree after deleting Node: 47
 Root: Node(left=21, value=30, right=76)
 Max level: 5
@@ -150,6 +159,7 @@ Value: '60' found in BST.
 Value: '0' NOT found in BST.
 Value: '45' found in BST.
 
+Deleting node with value: 60 from BST...
 Binary Search Tree after deleting Node: 60
 Root: Node(left=40, value=50, right=60)
 Max level: 4
@@ -160,6 +170,7 @@ Max level: 4
 
 
 
+Deleting node with value: 60 from BST...
 Binary Search Tree after deleting Node: 60
 Root: Node(left=40, value=50, right=60)
 Max level: 4
@@ -170,6 +181,7 @@ Max level: 4
 
 
 
+Deleting node with value: 40 from BST...
 Binary Search Tree after deleting Node: 40
 Root: Node(left=45, value=50, right=60)
 Max level: 4
@@ -179,5 +191,8 @@ Max level: 4
                            50
 
 
+
+Deleting node with value: 36 from BST...
+Node with value: 36 not found in BST.
 ************************************************************
 ```

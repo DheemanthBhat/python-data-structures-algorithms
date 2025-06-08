@@ -45,16 +45,20 @@ def main(
 
     # Delete
     for value in delete_values:
-        bst.delete(value)
-        print("\nBinary Search Tree after deleting Node:", value)
-        BSTUtils(bst).display_bst()
+        print(f"\nDeleting node with value: {value} from BST...")
+        del_status = bst.delete(value)
+        if del_status is True:
+            print("Binary Search Tree after deleting Node:", value)
+            BSTUtils(bst).display_bst()
+        else:
+            print(f"Node with value: {value} not found in BST.")
 
 
 if __name__ == "__main__":
     print("*" * 10, "Case 1: Full Binary Tree without duplicates", "*" * 10)
     input_vals = [50, 70, 55, 30, 40, 56, 80, 41, 35, 75, 54, 20, 90, 0, 25]
     lookup_vals = [56, 0, -20]
-    delete_vals = [75, 56, 30]
+    delete_vals = [36, 75, 56, 30]
     main(input_vals, lookup_vals, delete_vals)
     print("*" * 65, "\n\n")
 
@@ -67,6 +71,6 @@ if __name__ == "__main__":
     print("*" * 10, "Case 3: Skewed Binary Tree with duplicates", "*" * 10)
     input_vals = [50, 60, 40, 50, 60, 45, 60]
     lookup_vals = [60, 0, 45]
-    delete_vals = [60, 60, 40]
+    delete_vals = [60, 60, 40, 36]
     main(input_vals, lookup_vals, delete_vals, allow_duplicates=True)
     print("*" * 60)
