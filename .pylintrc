@@ -103,6 +103,7 @@ recursive=no
 # directory used to determine a package namespace for modules located under the
 # source root.
 source-roots=01_data_structures/05_binary_search_tree,
+             01_data_structures/08_heaps,
              02_algorithms/06_tree_traversal
 
 # When enabled, pylint would attempt to guess common misconfiguration and emit

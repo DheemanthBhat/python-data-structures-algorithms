@@ -3,7 +3,7 @@ Module containing implementation for Heap data structure.
 """
 
 from typing import Any
-from node import Node
+from heap.node import Node
 
 
 class Heap:

@@ -2,8 +2,8 @@
 Module to test Max Heap.
 """
 
-from heap_ds import Heap
-from heap_utils import HeapUtils
+from heap.heap import Heap
+from utils.heap_utils import HeapUtils
 
 
 def main(heap_type: int, input_values: list[int], delete_count: int):

@@ -3,9 +3,9 @@ Module containing Heap utility.
 """
 
 from math import log2, ceil
-from node import Node
-from heap_ds import Heap
-from heap_matrix import Matrix
+from heap.node import Node
+from heap.heap import Heap
+from utils.heap_matrix import Matrix
 
 
 class HeapUtils:
