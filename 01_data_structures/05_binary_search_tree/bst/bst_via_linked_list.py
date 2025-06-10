@@ -191,8 +191,7 @@ class BinarySearchTree:
     # Delete
     def delete(self, value: Any) -> bool:
         """
-        Function to delete a node in Binary Search
-        Tree containing the value `value`.
+        Function to delete the node in BST matching the `value`.
         """
         """
         STEP 1: Validation.
@@ -222,14 +221,12 @@ class BinarySearchTree:
             self._update_child(par_node, direction, None)
 
         # Case #2: Half node.
-        elif (tgt_node.left is not None) ^ (tgt_node.right is not None):
-            if tgt_node.left is not None:
-                ssr_node = tgt_node.left
-            elif tgt_node.right is not None:
-                ssr_node = tgt_node.right
-
+        elif tgt_node.left is None:  # Right half node.
             # Connect successor node to parent of target node.
-            self._update_child(par_node, direction, ssr_node)
+            self._update_child(par_node, direction, tgt_node.right)
+        elif tgt_node.right is None:  # Left half node.
+            # Connect successor node to parent of target node.
+            self._update_child(par_node, direction, tgt_node.left)
 
         # Case #3: Full node.
         elif tgt_node.left is not None and tgt_node.right is not None:
@@ -246,7 +243,7 @@ class BinarySearchTree:
         STEP 4: Update root pointer to successor node if the
                 target node (Node getting deleted) is the root node.
         """
-        if self.root.value == tgt_node.value:
+        if self.root is tgt_node:
             self.root = ssr_node
 
         return True

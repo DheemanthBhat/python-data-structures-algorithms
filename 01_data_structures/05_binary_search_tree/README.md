@@ -53,15 +53,15 @@ Max level: 4
  0    25    35    41    54    56          90
 
 
-Deleting node with value: 56 from BST...
-Binary Search Tree after deleting Node: 56
+Deleting node with value: 80 from BST...
+Binary Search Tree after deleting Node: 80
 Root: Node(left=30, value=50, right=70)
 Max level: 4
 
                      50
          30                      70
-   20          40          55          80
- 0    25    35    41    54                90
+   20          40          55          90
+ 0    25    35    41    54    56
 
 
 Deleting node with value: 30 from BST...
@@ -71,8 +71,8 @@ Max level: 4
 
                      50
          35                      70
-   20          40          55          80
- 0    25          41    54                90
+   20          40          55          90
+ 0    25          41    54    56
 
 *****************************************************************
 ```

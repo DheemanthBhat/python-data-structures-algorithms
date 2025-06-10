@@ -58,7 +58,7 @@ if __name__ == "__main__":
     print("*" * 10, "Case 1: Full Binary Tree without duplicates", "*" * 10)
     input_vals = [50, 70, 55, 30, 40, 56, 80, 41, 35, 75, 54, 20, 90, 0, 25]
     lookup_vals = [56, 0, -20]
-    delete_vals = [36, 75, 56, 30]
+    delete_vals = [36, 75, 80, 30]
     main(input_vals, lookup_vals, delete_vals)
     print("*" * 65, "\n\n")
 
